@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http.Cors;
 
@@ -12,12 +13,11 @@ namespace ContactHubAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            EnableCORS(config);
+            EnableJsonFormating(config);
+            EnableCors(config);
             // Web API routes
             config.MapHttpAttributeRoutes();
-            //Json Format
-            SetJsonFormatter(config);
-            //Routing
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
@@ -25,16 +25,15 @@ namespace ContactHubAPI
             );
         }
 
-        public static void SetJsonFormatter(HttpConfiguration config)
+        public static void EnableJsonFormating(HttpConfiguration config)
         {
-            config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+            config.Formatters.JsonFormatter.SerializerSettings.Formatting = Formatting.Indented;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
-
-        public static void EnableCORS(HttpConfiguration config)
+        public static void EnableCors(HttpConfiguration config)
         {
-            var Cors = new EnableCorsAttribute(origins:"*",headers:"*",methods:"*",exposedHeaders:"*");
-            config.EnableCors(Cors);
+            var CorsAttribute = new EnableCorsAttribute(origins:"*",headers:"*",methods:"*",exposedHeaders:"*");
+            config.EnableCors(CorsAttribute);
         }
     }
 }

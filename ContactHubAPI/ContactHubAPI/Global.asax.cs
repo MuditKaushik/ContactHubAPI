@@ -7,7 +7,7 @@ using System.Web.Routing;
 
 namespace ContactHubAPI
 {
-    public class WebApiApplication : HttpApplication
+    public class WebApiApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {

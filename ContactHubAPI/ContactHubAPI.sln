@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactHubAPI", "ContactHubAPI\ContactHubAPI.csproj", "{6BA08AC5-341F-4F43-BC6B-FA89A58DEBF0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactHubAPI.Tests", "ContactHubAPI.Tests\ContactHubAPI.Tests.csproj", "{AD421AB9-4FEB-486F-9C4A-4B606C51090F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactHubAPI", "ContactHubAPI\ContactHubAPI.csproj", "{5B19EB2A-35C8-4530-ACE8-345337C56FCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6BA08AC5-341F-4F43-BC6B-FA89A58DEBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BA08AC5-341F-4F43-BC6B-FA89A58DEBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BA08AC5-341F-4F43-BC6B-FA89A58DEBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BA08AC5-341F-4F43-BC6B-FA89A58DEBF0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD421AB9-4FEB-486F-9C4A-4B606C51090F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD421AB9-4FEB-486F-9C4A-4B606C51090F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD421AB9-4FEB-486F-9C4A-4B606C51090F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD421AB9-4FEB-486F-9C4A-4B606C51090F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B19EB2A-35C8-4530-ACE8-345337C56FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B19EB2A-35C8-4530-ACE8-345337C56FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B19EB2A-35C8-4530-ACE8-345337C56FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B19EB2A-35C8-4530-ACE8-345337C56FCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
