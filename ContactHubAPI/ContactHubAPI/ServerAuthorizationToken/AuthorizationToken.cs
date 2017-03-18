@@ -4,7 +4,7 @@ using Microsoft.Owin.Security;
 using System.Collections.Generic;
 using Microsoft.Owin.Security.OAuth;
 
-namespace ContactHubAPI.ServerAuthorization
+namespace ContactHubAPI.ServerAuthorizationToken
 {
     public class AuthorizationToken:OAuthAuthorizationServerProvider
     {
