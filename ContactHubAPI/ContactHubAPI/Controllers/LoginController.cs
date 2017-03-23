@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ContactHubAPI.Models.User;
+using ContactHubAPI.BusinessService;
 
 namespace ContactHubAPI.Controllers
 {
@@ -22,7 +20,11 @@ namespace ContactHubAPI.Controllers
         [HttpPost]
         public HttpResponseMessage UserSignup(RegisterUser model)
         {
-            return Request.CreateResponse(HttpStatusCode.OK,model);
+            var result = BusinessServiceFacade<RegisterUser>.BusinessUserManager.CreateNewUser(model);
+            if (result == null) {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK,result);
         }
     }
 }
