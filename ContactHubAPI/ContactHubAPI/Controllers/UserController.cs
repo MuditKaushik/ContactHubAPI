@@ -16,8 +16,11 @@ namespace ContactHubAPI.Controllers
         [Route("authorizeUser")]
         public HttpResponseMessage AuthorizeUser(LoginUser model)
         {
-            var identity = (ClaimsIdentity)User.Identity;
-            return Request.CreateResponse(HttpStatusCode.OK, (identity == null) ? null : identity);
+            if(!string.IsNullOrEmpty(model.Username) && !string.IsNullOrEmpty(model.Password))
+            {
+                Redirect(new Uri("/api/token"));
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

@@ -6,18 +6,19 @@ using Microsoft.Owin.Security.OAuth;
 
 namespace ContactHubAPI.ServerAuthorization
 {
-    public class AuthorizationToken:OAuthAuthorizationServerProvider
+    public class AuthorizationToken : OAuthAuthorizationServerProvider
     {
-        public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
-            return Task.FromResult(context.Validated());
+            await Task.FromResult(context.Validated());
         }
         public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            return Task.Run(() => {
+            return Task.Run(() =>
+            {
                 var username = context.UserName;
                 var password = context.Password;
-                switch((username == "mudit" && password == "mudit"))
+                switch ((username == "mudit" && password == "mudit"))
                 {
                     case true:
                         var claims = new List<Claim>()
@@ -26,8 +27,8 @@ namespace ContactHubAPI.ServerAuthorization
                             new Claim(ClaimTypes.Email,"mudit@gmail.com"),
                             new Claim(ClaimTypes.Name,"Mudit Kaushik")
                         };
-                        var claimIdentity = new ClaimsIdentity(claims,ContactHubApi_Auth_Startup.OAuthOptions.AuthenticationType);
-                            context.Validated(new AuthenticationTicket(claimIdentity, new AuthenticationProperties() { }));
+                        var claimIdentity = new ClaimsIdentity(claims, ContactHubApi_Auth_Startup.OAuthOptions.AuthenticationType);
+                        context.Validated(new AuthenticationTicket(claimIdentity, new AuthenticationProperties() { }));
                         break;
                     case false:
                         context.SetError("invalid user", "Username or Password invalid.");
