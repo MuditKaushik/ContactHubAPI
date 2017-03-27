@@ -9,6 +9,7 @@ using System.Security.Claims;
 
 namespace ContactHubAPI.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
